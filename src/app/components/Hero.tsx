@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   const handleSearch = async () => {
     dispatch(setSearchTerm(inputValue));
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?apikey=b21979e5&s=${inputValue}&page=${currentPage}`);
+      const response = await axios.get(`https://www.omdbapi.com/?apikey=b21979e5&s=${inputValue}&page=${currentPage}`);
       dispatch(setSearchResults(response.data.Search));
     } catch (error) {
       console.error('Error fetching data');
