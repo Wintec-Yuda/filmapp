@@ -9,7 +9,7 @@ import { FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 
 const Hero: React.FC = () => {
   const dispatch = useDispatch();
-  const { searchTerm, currentPage, apiKey } = useSelector((state: any) => state.search);
+  const { searchTerm, currentPage } = useSelector((state: any) => state.search);
   const [inputValue, setInputValue] = useState(searchTerm);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,10 +19,10 @@ const Hero: React.FC = () => {
   const handleSearch = async () => {
     dispatch(setSearchTerm(inputValue));
     try {
-      const response = await axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${inputValue}&page=${currentPage}`);
+      const response = await axios.get(`http://www.omdbapi.com/?apikey=b21979e5&s=${inputValue}&page=${currentPage}`);
       dispatch(setSearchResults(response.data.Search));
     } catch (error) {
-      console.error('Error fetching search results:', error);
+      console.error('Error fetching data');
     }
   };
 

@@ -10,14 +10,12 @@ interface SearchState {
   searchTerm: string;
   searchResults: Movie[];
   currentPage: number;
-  apiKey: string;
 }
 
 const initialState: SearchState = {
   searchTerm: '',
   searchResults: [],
   currentPage: 1,
-  apiKey: process.env.NEXT_OMDB_API_KEY || '',
 };
 
 const searchSlice = createSlice({
